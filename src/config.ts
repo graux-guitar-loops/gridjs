@@ -9,6 +9,7 @@ import Storage from './storage/storage';
 import Pipeline from './pipeline/pipeline';
 import Tabular from './tabular';
 import { Search, SearchConfig } from './view/plugin/search/search';
+import { BoundedSearch, BoundedSearchConfig } from './view/plugin/bounded_search/search';
 import { Pagination, PaginationConfig } from './view/plugin/pagination';
 import Header from './header';
 import { ServerStorageOptions } from './storage/server';
@@ -93,6 +94,7 @@ interface UserConfigExtend {
   resizable: boolean;
   columns: OneDArray<TColumn | string | ComponentChild>;
   search: SearchConfig | boolean;
+  boundedSearch: BoundedSearchConfig | boolean;
   pagination: PaginationConfig | boolean;
   // implicit option to enable the sort plugin globally
   sort: GenericSortConfig | boolean;
@@ -209,6 +211,18 @@ export class Config {
         enabled:
           userConfig.search === true || userConfig.search instanceof Object,
         ...(userConfig.search as SearchConfig),
+      },
+    });
+
+    // Search
+    config.plugin.add({
+      id: 'boundedSearch',
+      position: PluginPosition.Header,
+      component: BoundedSearch,
+      props: {
+        enabled:
+          userConfig.boundedSearch === true || userConfig.boundedSearch instanceof Object,
+        ...(userConfig.boundedSearch as BoundedSearchConfig),
       },
     });
 

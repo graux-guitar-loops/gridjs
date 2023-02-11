@@ -17,6 +17,7 @@ import Row from './src/row';
 import Cell from './src/cell';
 import BaseStore from './src/view/base/store';
 import Dispatcher from './src/util/dispatcher';
+import { GeneralSearch } from './src/view/plugin/general_search/search';
 
 export {
   Grid,
@@ -40,5 +41,6 @@ export {
   Component,
   createRef,
   useEffect,
-  useRef
+  useRef,
+  GeneralSearch
 };

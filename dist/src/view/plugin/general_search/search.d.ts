@@ -7,10 +7,10 @@ export interface GeneralSearchConfig {
     ignoreHiddenColumns?: boolean;
     debounceTimeout?: number;
     selector?: (cell: TCell, rowIndex: number, cellIndex: number) => string;
-    filterFunction?: (cell: TCell, rowIndex: number, cellIndex: number, keyword: string[], data: string) => boolean;
+    filterFunction?: (cell: TCell, rowIndex: number, cellIndex: number, keywords: string[], data: string) => boolean;
     server?: {
-        url?: (prevUrl: string, lowerBound: number, upperBound: number) => string;
-        body?: (prevBody: BodyInit, lowerBound: number, upperBound: number) => BodyInit;
+        url?: (prevUrl: string, keywords: string[], data: string) => string;
+        body?: (prevBody: BodyInit, keywords: string[], data: string) => BodyInit;
     };
 }
 export declare class GeneralSearch extends PluginBaseComponent<GeneralSearchConfig & PluginBaseProps<GeneralSearch>> {

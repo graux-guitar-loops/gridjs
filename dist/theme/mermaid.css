@@ -234,7 +234,6 @@ th.gridjs-th-sort:focus {
   background-color: #e5e7eb;
 }
 th.gridjs-th-fixed {
-  position: -webkit-sticky;
   position: sticky;
   box-shadow: 0 1px 0 0 #e5e7eb;
 }
@@ -309,14 +308,8 @@ th.gridjs-th:last-child {
   left: 0;
   transform: translateX(-100%);
   background-image: linear-gradient(90deg, rgba(204, 204, 204, 0) 0, rgba(204, 204, 204, 0.2) 20%, rgba(204, 204, 204, 0.5) 60%, rgba(204, 204, 204, 0));
-  -webkit-animation: shimmer 2s infinite;
-          animation: shimmer 2s infinite;
+  animation: shimmer 2s infinite;
   content: "";
-}
-@-webkit-keyframes shimmer {
-  100% {
-    transform: translateX(100%);
-  }
 }
 @keyframes shimmer {
   100% {
