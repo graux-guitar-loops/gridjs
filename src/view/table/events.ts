@@ -10,4 +10,5 @@ export interface TableEvents {
     row: Row,
   ) => void;
   rowClick: (e: JSX.TargetedMouseEvent<HTMLTableRowElement>, row: Row) => void;
+  rowDblClick: (e: JSX.TargetedMouseEvent<HTMLTableRowElement>, row: Row) => void;
 }

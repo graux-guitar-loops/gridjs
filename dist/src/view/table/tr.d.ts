@@ -10,6 +10,7 @@ export interface TRProps extends BaseProps {
 export declare class TR extends BaseComponent<TRProps> {
     private getColumn;
     private handleClick;
+    private handleDblClick;
     private getChildren;
     render(): h.JSX.Element;
 }

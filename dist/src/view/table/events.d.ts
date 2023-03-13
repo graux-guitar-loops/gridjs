@@ -4,4 +4,5 @@ import Row from '../../row';
 export interface TableEvents {
     cellClick: (e: JSX.TargetedMouseEvent<HTMLTableCellElement>, cell: TCell, column: TColumn, row: Row) => void;
     rowClick: (e: JSX.TargetedMouseEvent<HTMLTableRowElement>, row: Row) => void;
+    rowDblClick: (e: JSX.TargetedMouseEvent<HTMLTableRowElement>, row: Row) => void;
 }

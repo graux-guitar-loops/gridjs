@@ -32,6 +32,11 @@ export class TR extends BaseComponent<TRProps> {
     this.config.eventEmitter.emit('rowClick', e, this.props.row);
   }
 
+  private handleDblClick(e: JSX.TargetedMouseEvent<HTMLTableRowElement>): void {
+    if (this.props.messageRow) return;
+    this.config.eventEmitter.emit('rowDblClick', e, this.props.row);
+  }
+
   private getChildren(): ComponentChildren {
     if (this.props.children) {
       return this.props.children;
@@ -62,6 +67,7 @@ export class TR extends BaseComponent<TRProps> {
       <tr
         className={classJoin(className('tr'), this.config.className.tr)}
         onClick={this.handleClick.bind(this)}
+        onDblClick={this.handleDblClick.bind(this)}
       >
         {this.getChildren()}
       </tr>

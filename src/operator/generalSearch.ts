@@ -21,17 +21,10 @@ export default function (
 
 
         if (ignoreHiddenColumns){
-        if (
-          columns &&
-          columns[cellIndex] &&
-          typeof columns[cellIndex] === 'object'
-        ) {
-          const typedColumn = columns[cellIndex] as TColumn;
-          if (typedColumn.hidden) {
-            return false;
-          }
-          
-        }
+            const column = columns[cellIndex];
+            if (column && column.hidden) {
+                
+            }
         }
 
         let data : string = '';
